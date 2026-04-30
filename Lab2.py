@@ -27,12 +27,19 @@ def calc_min_max_temperature(list_temp):
     final_list = [int_min , int_max]
     return final_list
 
-def calc_median_temperature(temp_list):
-    asc_sorted_list = sorted(temp_list)
-    middle_index = len(asc_sorted_list) //2
-    median = asc_sorted_list[middle_index]
-    return median
+def calc_median_temperature(num_list):
+    sorted_list = sorted(num_list)
+    n = len(sorted_list)
     
+    if n % 2 == 1:   # odd
+        median = sorted_list[n // 2]
+    else:            # even
+        mid1 = sorted_list[n // 2]
+        mid2 = sorted_list[n // 2 - 1]
+        median = (mid1 + mid2) / 2
+    
+    print(f"Median is {median:.2f}")
+
 
 def main():
     print("ET0735 (DevOps for AIoT) - Lab 2 - Introduction to Python")
