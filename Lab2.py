@@ -27,6 +27,12 @@ def calc_min_max_temperature(list_temp):
     final_list = [int_min , int_max]
     return final_list
 
+def calc_median_temperature(temp_list):
+    asc_sorted_list = sorted(temp_list)
+    middle_index = len(asc_sorted_list) //2
+    median = asc_sorted_list[middle_index]
+    return median
+    
 
 def main():
     print("ET0735 (DevOps for AIoT) - Lab 2 - Introduction to Python")
